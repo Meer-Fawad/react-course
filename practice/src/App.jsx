@@ -65,17 +65,15 @@ function App() {
 
   const renderPage = () => {
     switch (page) {
-      case "todo": return <Todo />;
-      case "calculator": return <Calculator />;
+      case "todo":
+        return <Todo />;
+      case "calculator":
+        return <Calculator />;
       default:
         return (
           <div className="grid">
             {apps.map((app, i) => (
-              <div
-                key={i}
-                className="card"
-                onClick={() => setPage(app.page)}
-              >
+              <div key={i} className="card" onClick={() => setPage(app.page)}>
                 <img src={app.img} alt={app.name} />
                 <h3>{app.name}</h3>
                 <p>{app.desc}</p>
@@ -88,17 +86,16 @@ function App() {
 
   return (
     <>
-   
       <nav className="navbar">
         <h2 onClick={() => setPage("home")} className="logo">
           Dashboard
         </h2>
-       <ul>
-        <li>Home </li>
-        <li>About </li>
-        <li>Contact Us  </li>
-        <li>Visit  </li>
-       </ul>
+        <ul>
+          <li>Home </li>
+          <li>About </li>
+          <li>Contact Us </li>
+          <li>Visit </li>
+        </ul>
         <button
           className="btn"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

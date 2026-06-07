@@ -1,37 +1,34 @@
 import { useState } from "react";
 
 export default function Calculator() {
-    const [num , setNum] = useState("");
-    const [num2 , setNum2] = useState("");
-    const [result , setResult] = useState("");
-   const [expression , setExpression] = useState("");
-    const expressionHandler = (operator) => {
-        setExpression(operator);
-        const n1 = parseFloat(num);
-        const n2 = parseFloat(num2);
-        let res;
-        switch (operator) {
-            case "+":
-                res = n1 + n2;
-                break;
-            case "-":
-                res = n1 - n2;  
-                break;
-            case "*":
-                res = n1 * n2;  
-                break;
-            case "/":
-                res = n1 / n2;  
-                break;
-            default:
-                res = "Invalid operator";
-        }
-        setResult(res);
-    };
+  const [num, setNum] = useState("");
+  const [num2, setNum2] = useState("");
+  const [result, setResult] = useState("");
+  const [expression, setExpression] = useState("");
+  const expressionHandler = (operator) => {
+    setExpression(operator);
+    const n1 = parseFloat(num);
+    const n2 = parseFloat(num2);
+    let res;
+    switch (operator) {
+      case "+":
+        res = n1 + n2;
+        break;
+      case "-":
+        res = n1 - n2;
+        break;
+      case "*":
+        res = n1 * n2;
+        break;
+      case "/":
+        res = n1 / n2;
+        break;
+      default:
+        res = "Invalid operator";
+    }
+    setResult(res);
+  };
 
-
-
-  
   return (
     <div className="calculator">
       <h2>Calculator</h2>
